@@ -10,9 +10,9 @@ app.get('/v1/explorers', (req, res) => {
     console.log(`Api Explorers GET ALL requests ${new Date()}`)
     console.log(`Getting explorer with id ${req.params.id}`)
     const explorer1 = {id: 1, name: "Carlo"}
-    const explorer2 = {id: 1, name: "Carlo"}
-    const explorer3 = {id: 1, name: "Carlo"}
-    const explorer4 = {id: 1, name: "Carlo"}
+    const explorer2 = {id: 1, name: "Angel"}
+    const explorer3 = {id: 1, name: "Jose"}
+    const explorer4 = {id: 1, name: "Ricardo"}
     const explorers = [explorer1, explorer2, explorer3, explorer4]
     res.status(200).json(explorers)
   })
@@ -35,6 +35,13 @@ app.get('/v1/explorers', (req, res) => {
     console.log(`Update explorer with id ${req.params.id}`)
     const requestBody = req.body // Parámetros de un cliente
     res.status(200).json({message: "Updated!"})
+  })
+
+  app.delete('/v1/explorers/:id', (req, res) => {
+    console.log(`Api Explorers DELETE request ${new Date()}`)
+    console.log(`Delete explorer with id ${req.params.id}`)
+    const requestBody = req.body // Parámetros de un cliente
+    res.status(200).json({message: "Deleted"})
   })
 
 // Con esto inicializamos esta app
